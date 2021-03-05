@@ -10,10 +10,10 @@ col1,col2=st.beta_columns(2)
 
 
 
-sepal_length=st.sidebar.slider(label='Sepal Length',min_value=df['sepal_length'].min(),max_value=df['sepal_length'].max())
-sepal_width=st.sidebar.slider(label='Sepal Width',min_value=df['sepal_width'].min(),max_value=df['sepal_width'].max())
-petal_length=st.sidebar.slider(label='Petal Length',min_value=df['petal_length'].min(),max_value=df['petal_length'].max())
-petal_width=st.sidebar.slider(label='Petal Width',min_value=df['petal_width'].min(),max_value=df['petal_width'].max())
+sepal_length=st.sidebar.slider(label='Sepal Length',min_value=float(df['sepal_length'].min()),max_value=float(df['sepal_length'].max()))
+sepal_width=st.sidebar.slider(label='Sepal Width',min_value=float(df['sepal_width'].min()),max_value=float(df['sepal_width'].max()))
+petal_length=st.sidebar.slider(label='Petal Length',min_value=float(df['petal_length'].min()),max_value=float(df['petal_length'].max()))
+petal_width=st.sidebar.slider(label='Petal Width',min_value=float(df['petal_width'].min()),max_value=float(df['petal_width'].max()))
 
 
 
@@ -48,7 +48,6 @@ with col2:
     st.write("Species Distribution Table")
     st.write(df['species'].value_counts())
     st.plotly_chart(histo)
-    st.write("ssss")
     audio_file = open("abc.ogg", 'rb')
     audio_byte = audio_file.read()
     st.video(audio_byte, format='audio/ogg')
